@@ -25,6 +25,12 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:' + rootProject.ext.mockitoVersion
     testImplementation 'org.robolectric:robolectric:' + rootProject.ext.robolectricVersion
     testImplementation 'org.assertj:assertj-core:' + rootProject.ext.assertjVersion
+    // The fill-viewport loaders are compileOnly on the library. Unit tests that
+    // execute those transformations need the same artifacts on the test classpath.
+    // Versions are the ones the library's version ranges resolve to.
+    testImplementation 'com.squareup.picasso:picasso:2.5.1'
+    testImplementation 'com.github.bumptech.glide:glide:' + rootProject.ext.glideVersion
+    testImplementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
     // Support Annotations
     implementation 'androidx.annotation:annotation:' + rootProject.ext.androidxVersion
     // Optional dependencies for extensions
